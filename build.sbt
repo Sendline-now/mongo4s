@@ -6,7 +6,7 @@ import scala.xml.{Elem, Node}
 lazy val currentOrganization  = "now.sendline"
 lazy val previousOrganization = "org.mongo4s"
 
-lazy val binaryCompatibleWith = Set((previousOrganization, "5.0.0"), (previousOrganization, "5.1.1"))
+lazy val binaryCompatibleWith = Set((currentOrganization, "6.0.0"))
 
 lazy val requiredJdk = 25
 
