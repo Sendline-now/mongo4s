@@ -47,7 +47,6 @@ flowchart LR
 * [Modules](#modules)
 * [Benchmarks](#benchmarks)
 * [Design notes](#design-notes)
-* [Adopters](#adopters)
 * [Changelog](CHANGELOG.md)
 * [Roadmap](ROADMAP.md)
 * [Contributing](#contributing)
@@ -2564,17 +2563,6 @@ or against an in-memory buffer.
 
 Each of those, the failure that motivated it, the sharp edges accepted along the way, and what was rejected:
 **[DESIGN.md](DESIGN.md)**.
-
-## Adopters
-
-<a href="https://betby.com">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="logos/betby.svg"/>
-    <img src="logos/betby-dark.svg" alt="Betby" height="56"/>
-  </picture>
-</a>
-
-Using mongo4s? Open a PR to add your logo.
 
 ## Contributing
 
