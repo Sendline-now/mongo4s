@@ -58,10 +58,10 @@ third-party codec library, nothing beyond `mongo4s-core`, which brings it in:
 
 ```scala
 libraryDependencies ++= Seq(
-  "now.sendline" %% "mongo4s-cats"           % "6.0.0", // mongo4s-core + cats-effect integration
-  "now.sendline" %% "mongo4s-bson-direct"    % "6.0.0", // ast-free bson codecs
-  "now.sendline" %% "mongo4s-bson-cats-data" % "6.0.0", // if you need NonEmptyList etc. codec instances
-  "now.sendline" %% "mongo4s-repositories"   % "6.0.0", // if you need auto-generated CRUD repository ops for your model
+  "now.sendline" %% "mongo4s-cats"           % "6.1.0", // mongo4s-core + cats-effect integration
+  "now.sendline" %% "mongo4s-bson-direct"    % "6.1.0", // ast-free bson codecs
+  "now.sendline" %% "mongo4s-bson-cats-data" % "6.1.0", // if you need NonEmptyList etc. codec instances
+  "now.sendline" %% "mongo4s-repositories"   % "6.1.0", // if you need auto-generated CRUD repository ops for your model
 )
 ```
 
@@ -2221,7 +2221,7 @@ a session, so a number can be drawn inside a transaction. `Counters[F]` is the t
 `FakeCounters` in the testkit is the real implementation over a `FakeMongoCollection`.
 
 For unit tests, `FakeMongoCollection` (in `mongo4s-testkit`, a published module — add it as
-`"now.sendline" %% "mongo4s-testkit" % "6.0.0" % Test`) implements `MongoCollection` in memory. The exact same
+`"now.sendline" %% "mongo4s-testkit" % "6.1.0" % Test`) implements `MongoCollection` in memory. The exact same
 `Filter`/`Update`/`Field` AST the real driver interprets is interpreted against an in-memory buffer instead, so
 repository logic is testable without a running MongoDB.
 
@@ -2448,7 +2448,7 @@ the other single-result publishers that it guards.
 Published for `Scala 3.9 LTS` under `now.sendline`:
 
 ```scala
-"now.sendline" %% "mongo4s-<module>" % "6.0.0"
+"now.sendline" %% "mongo4s-<module>" % "6.1.0"
 ```
 
 | | Module | Notes |
@@ -2490,6 +2490,9 @@ still `mongo4s`, and MiMa checks it against `org.mongo4s` `5.0.0` and `5.1.1`. S
 version is moved to `now.sendline` by Maven and by sbt. The repository is
 [sendline-now/mongo4s](https://github.com/sendline-now/mongo4s), and the site is
 [oss.sendline.now/mongo4s](https://oss.sendline.now/mongo4s/).
+
+`6.1.0` is binary compatible with `6.0.0` and changes no code. It moves to MongoDB driver `5.15.0` and `fs2` `3.16.0`,
+and is built with sbt `2.1.0`.
 
 `5.0.0` is a breaking release, almost entirely in binary shape rather than in what a call says: most existing calls
 compile unchanged against it. `insertOne`/`insertMany` take options, `bulkWrite` takes `BulkWriteOptions` instead of
