@@ -1,6 +1,6 @@
 package mongo4s.it.watch
 
-import java.util.concurrent.{CompletableFuture, TimeUnit}
+import java.util.concurrent.{CompletableFuture, Executor, TimeUnit}
 
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers
@@ -26,15 +26,8 @@ trait RuntimeWatchItSpec[F[*], S[*]] extends AnyWordSpec, Matchers:
   protected def takeEvents(stream: S[ChangeEvent[Person]], n: Int): List[ChangeEvent[Person]]
 
   private def collecting(n: Int)(stream: => S[ChangeEvent[Person]])(writes: => Unit): List[ChangeEvent[Person]] =
-    val result = CompletableFuture[List[ChangeEvent[Person]]]()
-
-    val worker = Thread { () =>
-      try result.complete(takeEvents(stream, n)): Unit
-      catch case error: Throwable => result.completeExceptionally(error): Unit
-    }
-
-    worker.setDaemon(true)
-    worker.start()
+    val daemon: Executor = task => Thread.ofPlatform().daemon().start(task): Unit
+    val result           = CompletableFuture.supplyAsync(() => takeEvents(stream, n), daemon)
 
     writes
 
