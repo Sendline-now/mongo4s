@@ -4,30 +4,30 @@ object Dependencies {
 
   object Versions {
     val scala3     = "3.9.0"
-    val scala3Next = "3.10.0"
+    val scala3Next = "3.10.1"
 
-    val mongo = "5.14.0"
+    val mongo = "5.15.0"
 
     val cats              = "2.13.0"
     val catsEffect3       = "3.7.1"
     val catsEffectTesting = "1.8.0"
-    val fs2               = "3.14.0"
+    val fs2               = "3.16.0"
 
     val zio                       = "2.1.27"
-    val zioPrelude                = "1.0.0-RC48"
+    val zioPrelude                = "1.0.0-RC49"
     val zioInteropReactiveStreams = "2.0.2"
 
     val kyo = "1.0.0-RC7"
 
-    val rapid = "2.9.9"
+    val rapid = "2.9.10"
 
     val medeia  = "1.0.9"
-    val zioBson = "1.0.11"
+    val zioBson = "1.0.12"
     val calypso = "0.7.0"
 
     val mongo4cats = "0.8.0"
     val circe      = "0.14.17"
-    val zioSchema  = "1.9.0"
+    val zioSchema  = "1.9.2"
 
     val testcontainers = "2.0.5"
 
