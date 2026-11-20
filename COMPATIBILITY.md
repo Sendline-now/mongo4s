@@ -13,6 +13,12 @@
   `build.sbt`, so nothing is waived silently. A major release — `3.0.0`, `4.0.0`, `5.0.0` — has no such exceptions: its
   migration guide below is what the major version covers.
 
+## Upgrading from 6.0.0 to 6.1.0
+
+Binary compatible: MiMa checks `6.1.0` against `6.0.0` and finds nothing. Nothing to change in calling code. The
+MongoDB driver moves from `5.14.0` to `5.15.0` and `fs2` from `3.14.0` to `3.16.0`; both are minor releases, and both
+reach your classpath through eviction unless your build pins older ones.
+
 ## Upgrading from 5.1.x to 6.0.0
 
 Only the organization changes. The code is `5.1.1`'s, the package is still `mongo4s`, and MiMa checks every module of

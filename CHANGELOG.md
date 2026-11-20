@@ -8,6 +8,16 @@ Notable changes per release. Breaking changes and how to migrate are in
 This file starts at `2.0.0`. `1.0.0` was released without one, and `1.1.0` was never published — its changes are
 part of `2.0.0` below.
 
+## 6.1.0
+
+Binary compatible with `6.0.0`, checked by MiMa. No code changes; the dependencies move.
+
+### Changed
+
+- `mongodb-driver-reactivestreams` `5.15.0`.
+- `fs2` `3.16.0`, `rapid` `2.9.10`, `zio-bson` `1.0.12`.
+- sbt `2.1.0`, `sbt-pgp` `2.4.0`, and Scala `3.10.1` for the integration suite, which compiles on the newest Scala 3.
+
 ## 6.0.0
 
 Binary compatible with `org.mongo4s` `5.0.0` and `5.1.1`, checked by MiMa. Only the coordinates change; how to move is in
